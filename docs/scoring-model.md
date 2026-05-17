@@ -1,0 +1,1 @@
+# How I Designed the Impact Score Logic
