@@ -1,0 +1,3 @@
+export const TRADE_TIMING_MS = 2000
+
+export const EARLY_ROUND_DURATION = 25000

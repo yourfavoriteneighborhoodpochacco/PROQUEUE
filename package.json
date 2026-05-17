@@ -1,0 +1,8 @@
+{
+    "name": "proqueue",
+    "private": true,
+    "workspace": [
+        "apps/*",
+        "packages/*"
+    ]
+}
