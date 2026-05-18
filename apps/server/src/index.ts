@@ -1,4 +1,5 @@
 import { app } from './app';
+import "dotenv/config";
 import { env } from './config/env';
 import { db } from './db/client';
 

@@ -5,6 +5,7 @@
     "moduleResolution": "node",
     "outDir": "./dist",
     "declarationDir": "./dist",
+    "baseUrl": ".",
     "paths": {
       "@proqueue/shared/*": ["../shared/*"]
     }

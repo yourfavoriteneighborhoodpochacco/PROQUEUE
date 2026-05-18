@@ -10,5 +10,8 @@
     "dev:client": "npm run dev --workspace=apps/client",
     "build": "npm run build --workspaces",
     "test": "npm run test --workspaces"
+  },
+  "dependencies": {
+    "dotenv": "^17.4.2"
   }
 }

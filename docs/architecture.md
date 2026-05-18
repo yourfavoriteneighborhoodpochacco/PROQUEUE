@@ -1,7 +1,8 @@
 # Breaking Down the Design Behind PROQUEUE's Modern Architecture
 
-## System Architecture
+## System Architecture & Tech Stack
 Sooo, how do all the puzzle pieces fit together?
+TypeScript, React, Node.js, Express.js, PostgreSQL, Docker
 
 ## Monorepo Structure
 Coming soon!
