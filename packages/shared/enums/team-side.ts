@@ -1,4 +1,4 @@
 export enum TeamSide {
-    ATTACKERS = "ATTACKERS",
-    DEFENDERS = "DEFENDERS"
+  Attack = 'ATTACK',
+  Defense = 'DEFENSE',
 }

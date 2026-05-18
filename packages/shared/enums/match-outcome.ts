@@ -1,5 +1,5 @@
 export enum MatchOutcome {
-    WIN = "WIN",
-    LOSS = "LOSS",
-    DRAW = "DRAW"
+  Win = 'WIN',
+  Loss = 'LOSS',
+  Draw = 'DRAW',
 }

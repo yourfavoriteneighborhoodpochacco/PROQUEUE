@@ -1,0 +1,11 @@
+{
+  "name": "@proqueue/shared",
+  "version": "1.0.0",
+  "main": "./index.ts",
+  "types": "./index.ts",
+  "exports": {
+    "./types/*": "./types/*.ts",
+    "./enums/*": "./enums/*.ts",
+    "./constants/*": "./constants/*.ts"
+  }
+}

@@ -1,9 +1,6 @@
-import { Router } from "express"
+import { Router } from 'express';
+import { getPlayer } from '../controllers/player-controller';
 
-import * as playerController from "../controllers/playerController"
+export const playerRouter = Router();
 
-const router = Router()
-
-router.get("/:name/:tag", playerController.getPlayer)
-
-export default router
+playerRouter.get('/:gameName/:tagLine', getPlayer);

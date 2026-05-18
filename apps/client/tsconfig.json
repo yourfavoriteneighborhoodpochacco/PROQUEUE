@@ -1,0 +1,13 @@
+{
+  "extends": "../../tsconfig.base.json",
+  "compilerOptions": {
+    "outDir": "./dist",
+    "rootDir": "./src",
+    "jsx": "react-jsx",
+    "paths": {
+      "@proqueue/shared/*": ["../../packages/shared/*"],
+      "@proqueue/analytics/*": ["../../packages/analytics/*"]
+    }
+  },
+  "include": ["src/**/*"]
+}

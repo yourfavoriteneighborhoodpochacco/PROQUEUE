@@ -1,5 +1,19 @@
-import express from "express"
-import cors from "cors"
+import { app } from './app';
+import { env } from './config/env';
+import { db } from './db/client';
 
-import playerRoutes from "./routes/playerRoutes"
-import matchRoutes from "./routes/matchRoutes"
+async function start() {
+  try {
+    await db.query('SELECT 1'); // verify DB connection
+    console.log('Database connected');
+
+    app.listen(env.PORT, () => {
+      console.log(`Server running on port ${env.PORT}`);
+    });
+  } catch (err) {
+    console.error('Failed to start server:', err);
+    process.exit(1);
+  }
+}
+
+start();

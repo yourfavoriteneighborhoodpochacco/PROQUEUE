@@ -1,7 +1,7 @@
 export enum GameMode {
-    DEATHMATCH = "DEATHMATCH",
-    TDM = "TDM",
-    RANKED = "RANKED",
-    UNRATED = "UNRATED",
-    SWIFTPLAY = "SWIFTPLAY"
+  Competitive = 'COMPETITIVE',
+  Unrated = 'UNRATED',
+  SpikeRush = 'SPIKERUSH',
+  Deathmatch = 'DEATHMATCH',
+  Swiftplay = 'SWIFTPLAY',
 }

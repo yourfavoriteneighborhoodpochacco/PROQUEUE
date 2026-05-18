@@ -1,0 +1,15 @@
+{
+  "name": "@proqueue/analytics",
+  "version": "1.0.0",
+  "main": "./index.ts",
+  "types": "./index.ts",
+  "exports": {
+    "./parsing/*": "./parsing/*.ts",
+    "./detection/*": "./detection/*.ts",
+    "./scoring/*": "./scoring/*.ts",
+    "./profiling/*": "./profiling/*.ts"
+  },
+  "dependencies": {
+    "@proqueue/shared": "*"
+  }
+}

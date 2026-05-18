@@ -1,0 +1,11 @@
+export const SCORE_THRESHOLDS = {
+  ELITE: 80,
+  STRONG: 60,
+  AVERAGE: 40,
+  WEAK: 20,
+} as const;
+
+export const CONSISTENCY_THRESHOLDS = {
+  HIGH_VOLATILITY_STD_DEV: 25,
+  LOW_VOLATILITY_STD_DEV: 10,
+} as const;

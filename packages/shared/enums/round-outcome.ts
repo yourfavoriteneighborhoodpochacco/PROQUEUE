@@ -1,4 +1,6 @@
 export enum RoundOutcome {
-    WIN = "WIN",
-    LOSS = "LOSS"
+  Elimination = 'ELIMINATION',
+  Detonated = 'DETONATED',
+  Defused = 'DEFUSED',
+  TimeExpired = 'TIME_EXPIRED',
 }
