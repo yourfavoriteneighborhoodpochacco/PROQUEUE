@@ -41,8 +41,5 @@ Sentinel IS depends on the following components:
 - AST/D Ratio
 - KAST
 
-## Normalization
-
-## Limitations
-
 ## Future Improvements
+EVERYTHING!! Please stay tuned to see what PROQUEUE (whether this name will stay the same or not) has in store for 2026-2027.

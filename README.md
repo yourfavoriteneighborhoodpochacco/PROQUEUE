@@ -1,6 +1,6 @@
 #  PROQUEUE: VALORANT Analytics & Performance Analysis Engine
 ## Philosophy
-PROQUEUE is a systems-oriented product engineering project focused on player performance decomposition, contextual stat modeling, and role-based impact analysis in competitive FPS games.
+PROQUEUE is a systems-oriented product engineering project focused on player performance decomposition, contextual stat modeling, and role-based impact analysis in competitive FPS games. Entirely designed by me. Code built like 90% by me and 10% Claude to help with debugging and boilerplate. For more information on my design process, checkout my docs/ folder!
 
 ## Features
 - Role-based Impact Score modeling
@@ -9,17 +9,28 @@ PROQUEUE is a systems-oriented product engineering project focused on player per
 - Behavioral trend analysis
 
 ## PROQUEUE's Modern Architecture
-React Frontend
-Express API
-PostgreSQL
-Analytics Engine
+React Frontend  
 
-## Tech Stack Used
-TypeScript
-React
-Node.js
-Express.js
-PostgreSQL
+Express API  
+
+PostgreSQL  
+
+Analytics Engine  
+
+Docker containerization  
+
+## Stack & Tools
+TypeScript  
+
+React  
+
+Node.js  
+
+Express.js  
+
+PostgreSQL  
+
+Docker  
 
 ## Insider Look into Development
 ### V1
