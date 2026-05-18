@@ -1,0 +1,4 @@
+//Match history for a player is just pulled from Riot's Player API
+export const MatchHistory = () => {
+
+}

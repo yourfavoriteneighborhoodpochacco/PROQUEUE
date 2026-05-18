@@ -1,6 +1,0 @@
-export enum Role {
-    DUELIST = "DUELIST",
-    INITIATOR = "INITIATOR",
-    CONTROLLER = "CONTROLLER",
-    SENTINEL = "SENTINEL"
-}

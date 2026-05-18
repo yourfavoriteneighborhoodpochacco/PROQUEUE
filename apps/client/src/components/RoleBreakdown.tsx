@@ -1,1 +1,0 @@
-//The individual components of how the Impact Score is calculated using Riot API stats

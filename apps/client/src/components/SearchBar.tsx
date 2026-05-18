@@ -1,1 +1,4 @@
 //wip
+export const SearchBar = () => {
+
+}
