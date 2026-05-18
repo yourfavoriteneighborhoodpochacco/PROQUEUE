@@ -1,33 +1,20 @@
 import { Request, Response } from 'express';
-import { syncPlayerMatches } from '../../ingestion/sync';
-import { getMatchesByPuuid } from '../../db/queries/matches';
+import { getOrFetchPlayer } from '../../services/playerService';
 
-export async function getPlayerMatches(
-  req: Request,
-  res: Response
-): Promise<void> {
-  const { puuid } = req.params;
+export async function getPlayer(req: Request, res: Response): Promise<void> {
+  const { gameName, tagLine } = req.params;
 
-  if (!puuid) {
-    res.status(400).json({ error: 'puuid is required' });
+  if (!gameName || !tagLine) {
+    res.status(400).json({ error: 'gameName and tagLine are required' });
     return;
   }
 
-  const matches = await getMatchesByPuuid(puuid);
-  res.json(matches);
-}
+  const player = await getOrFetchPlayer(gameName, tagLine);
 
-export async function syncMatches(
-  req: Request,
-  res: Response
-): Promise<void> {
-  const { puuid } = req.params;
-
-  if (!puuid) {
-    res.status(400).json({ error: 'puuid is required' });
+  if (!player) {
+    res.status(404).json({ error: 'Player not found' });
     return;
   }
 
-  await syncPlayerMatches(puuid);
-  res.json({ message: `Synced matches for ${puuid}` });
+  res.json(player);
 }

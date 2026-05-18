@@ -1,12 +1,22 @@
 {
   "extends": "../../tsconfig.base.json",
   "compilerOptions": {
+    "module": "CommonJS",
+    "moduleResolution": "node",
     "outDir": "./dist",
-    "rootDir": "./src",
+    "declarationDir": "./dist",
     "paths": {
       "@proqueue/shared/*": ["../../packages/shared/*"],
       "@proqueue/analytics/*": ["../../packages/analytics/*"]
     }
   },
-  "include": ["src/**/*"]
+  "include": [
+    "src/**/*",
+    "../../packages/shared/**/*",
+    "../../packages/analytics/**/*"
+  ],
+  "references": [
+    { "path": "../../packages/shared" },
+    { "path": "../../packages/analytics" }
+  ]
 }

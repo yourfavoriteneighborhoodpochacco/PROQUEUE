@@ -1,13 +1,21 @@
 {
   "extends": "../../tsconfig.base.json",
   "compilerOptions": {
-    "outDir": "./dist",
-    "rootDir": "./src",
+    "module": "ESNext",
+    "moduleResolution": "bundler",
     "jsx": "react-jsx",
+    "outDir": "./dist",
+    "declarationDir": "./dist",
     "paths": {
       "@proqueue/shared/*": ["../../packages/shared/*"],
       "@proqueue/analytics/*": ["../../packages/analytics/*"]
     }
   },
-  "include": ["src/**/*"]
+  "include": [
+    "src/**/*",
+    "../../packages/shared/**/*"
+  ],
+  "references": [
+    { "path": "../../packages/shared" }
+  ]
 }

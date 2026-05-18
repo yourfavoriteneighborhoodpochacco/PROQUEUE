@@ -1,13 +1,25 @@
 {
   "name": "@proqueue/analytics",
   "version": "1.0.0",
-  "main": "./index.ts",
-  "types": "./index.ts",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
   "exports": {
-    "./parsing/*": "./parsing/*.ts",
-    "./detection/*": "./detection/*.ts",
-    "./scoring/*": "./scoring/*.ts",
-    "./profiling/*": "./profiling/*.ts"
+    "./parsing/*": {
+      "require": "./dist/parsing/*.js",
+      "types": "./dist/parsing/*.d.ts"
+    },
+    "./detection/*": {
+      "require": "./dist/detection/*.js",
+      "types": "./dist/detection/*.d.ts"
+    },
+    "./scoring/*": {
+      "require": "./dist/scoring/*.js",
+      "types": "./dist/scoring/*.d.ts"
+    },
+    "./profiling/*": {
+      "require": "./dist/profiling/*.js",
+      "types": "./dist/profiling/*.d.ts"
+    }
   },
   "dependencies": {
     "@proqueue/shared": "*"

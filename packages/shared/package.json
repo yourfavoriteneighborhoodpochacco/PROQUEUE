@@ -1,11 +1,20 @@
 {
   "name": "@proqueue/shared",
   "version": "1.0.0",
-  "main": "./index.ts",
-  "types": "./index.ts",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
   "exports": {
-    "./types/*": "./types/*.ts",
-    "./enums/*": "./enums/*.ts",
-    "./constants/*": "./constants/*.ts"
+    "./types/*": {
+      "require": "./dist/types/*.js",
+      "types": "./dist/types/*.d.ts"
+    },
+    "./enums/*": {
+      "require": "./dist/enums/*.js",
+      "types": "./dist/enums/*.d.ts"
+    },
+    "./constants/*": {
+      "require": "./dist/constants/*.js",
+      "types": "./dist/constants/*.d.ts"
+    }
   }
 }
