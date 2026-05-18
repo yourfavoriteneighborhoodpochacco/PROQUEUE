@@ -23,7 +23,6 @@ export async function upsertMatch(
 
   for (const player of players) {
     const score = scores.find((s) => s.puuid === player.puuid);
-
     await db.query(
       `INSERT INTO player_match_results
         (match_id, puuid, team_id, outcome, agent_id, kills, deaths, assists, score,
@@ -48,11 +47,24 @@ export async function upsertMatch(
   }
 }
 
-export async function getMatchesByPuuid(
-  puuid: string
-): Promise<PlayerMatchResult[]> {
-  const result = await db.query<PlayerMatchResult>(
-    `SELECT * FROM player_match_results WHERE puuid = $1 ORDER BY match_id DESC`,
+export async function getMatchesByPuuid(puuid: string): Promise<any[]> {
+  const result = await db.query(
+    `SELECT
+      match_id AS "matchId",
+      puuid,
+      team_id AS "teamId",
+      outcome,
+      agent_id AS "agentId",
+      kills,
+      deaths,
+      assists,
+      score,
+      impact_raw AS "impactRaw",
+      impact_normalized AS "impactNormalized",
+      impact_breakdown AS "impactBreakdown"
+     FROM player_match_results
+     WHERE puuid = $1
+     ORDER BY match_id DESC`,
     [puuid]
   );
   return result.rows;

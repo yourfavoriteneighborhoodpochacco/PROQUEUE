@@ -3,7 +3,14 @@ import { Player } from '@proqueue/shared/types/player';
 
 export async function getPlayerByPuuid(puuid: string): Promise<Player | null> {
   const result = await db.query<Player>(
-    `SELECT * FROM players WHERE puuid = $1`,
+    `SELECT 
+      puuid,
+      game_name AS "gameName",
+      tag_line AS "tagLine",
+      region,
+      created_at AS "createdAt",
+      updated_at AS "updatedAt"
+     FROM players WHERE puuid = $1`,
     [puuid]
   );
   return result.rows[0] ?? null;
