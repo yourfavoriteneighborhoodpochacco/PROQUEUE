@@ -20,7 +20,11 @@
   gap: 1.5rem;
 }
 
-.role-row { display: flex; flex-direction: column; gap: 0.6rem; }
+.role-row {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
 
 .role-row-header {
   display: flex;

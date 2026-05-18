@@ -7,6 +7,6 @@ export async function fetchPlayer(
 ): Promise<PlayerDTO> {
     const { data } = await apiClient.get<PlayerDTO>(
         `/players/${gameName}/${tagLine}`
-    ) 
+    )
     return data
 }

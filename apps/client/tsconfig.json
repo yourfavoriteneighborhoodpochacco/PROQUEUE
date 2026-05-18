@@ -7,8 +7,12 @@
     "outDir": "./dist",
     "declarationDir": "./dist",
     "paths": {
-      "@proqueue/shared/*": ["../../packages/shared/*"],
-      "@proqueue/analytics/*": ["../../packages/analytics/*"]
+      "@proqueue/shared/*": [
+        "../../packages/shared/*"
+      ],
+      "@proqueue/analytics/*": [
+        "../../packages/analytics/*"
+      ]
     }
   },
   "include": [
@@ -16,6 +20,8 @@
     "../../packages/shared/**/*"
   ],
   "references": [
-    { "path": "../../packages/shared" }
+    {
+      "path": "../../packages/shared"
+    }
   ]
 }

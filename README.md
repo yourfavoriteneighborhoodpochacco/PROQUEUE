@@ -21,16 +21,11 @@ Node.js
 Express.js
 PostgreSQL
 
-## Example Analytics
-Coming soon!
-
-## Installation
-npm install
-docker compose up
-npm run dev
-
-## Development
-Coming Soon!
+## Insider Look into Development
+### V1
+![PROQUEUE Hero](docs/screenshots/v1-hero.png)
+![PROQUEUE Description](docs/screenshots/v1-philosophy.png)
+![PROQUEUE Dashboard](docs/screenshots/v1-profile.png)
 
 ## Roadmap
 Client-side design

@@ -16,11 +16,9 @@ export function usePlayer(gameName: string, tagLine: string) {
     fetchPlayer(gameName, tagLine)
       .then(async (p) => {
         setPlayer(p);
-        // Auto-sync matches in background after player loads
         try {
           await syncMatches(p.puuid);
         } catch {
-          // Sync failure is non-fatal — show cached data if available
           console.warn('Match sync failed, showing cached data');
         }
       })

@@ -65,8 +65,13 @@
   color: var(--white);
 }
 
-.impact-card-stat-value.win { color: var(--win); }
-.impact-card-stat-value.loss { color: var(--loss); }
+.impact-card-stat-value.win {
+  color: var(--win);
+}
+
+.impact-card-stat-value.loss {
+  color: var(--loss);
+}
 
 .impact-empty {
   font-family: var(--font-mono);

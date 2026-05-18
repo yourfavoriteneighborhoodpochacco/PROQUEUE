@@ -77,23 +77,23 @@ export function Home() {
             Most trackers count. PROQUEUE interprets.
           </p>
           <p className="home-philosophy-text">
-            A kill is not a kill. An entry frag into a site with no follow-up is a 
-            failed play dressed as a stat. A death that was immediately traded is a 
-            sacrifice, not a mistake. Raw numbers collapse this distinction. 
+            A kill is not a kill. An entry frag into a site with no follow-up is a
+            failed play dressed as a stat. A death that was immediately traded is a
+            sacrifice, not a mistake. Raw numbers collapse this distinction.
             PROQUEUE doesn't.
           </p>
           <p className="home-philosophy-text">
-            Every match is decomposed into structured events - entries, trades, 
-            trade chains, utility-assisted kills, clutch situations, round-phase 
-            timing. Each event is evaluated against what your role demands. A 
-            Duelist dying untraded in a post-plant costs more than a Controller 
-            doing the same. A Sentinel holding a retake reads differently than a 
+            Every match is decomposed into structured events - entries, trades,
+            trade chains, utility-assisted kills, clutch situations, round-phase
+            timing. Each event is evaluated against what your role demands. A
+            Duelist dying untraded in a post-plant costs more than a Controller
+            doing the same. A Sentinel holding a retake reads differently than a
             Duelist doing it. Role expectation is the lens.
           </p>
           <p className="home-philosophy-text">
-            The result is an Impact Score, IS. Not a rank. Not a grade handed down 
-            by opaque ML. A deterministic, reproducible number you can trace back 
-            to the exact events that built it. Interpretability over ranking. 
+            The result is an Impact Score, IS. Not a rank. Not a grade handed down
+            by opaque ML. A deterministic, reproducible number you can trace back
+            to the exact events that built it. Interpretability over ranking.
             Context over raw statistics. That's the whole idea.
           </p>
         </div>
@@ -107,8 +107,8 @@ export function Home() {
             <div className="home-pillar-number">01</div>
             <h3 className="home-pillar-title">Match Event Decomposition</h3>
             <p className="home-pillar-text">
-              Raw match data is transformed into structured, role-relevant 
-              events. Entries, trades, utility kills, clutch situations, 
+              Raw match data is transformed into structured, role-relevant
+              events. Entries, trades, utility kills, clutch situations,
               round-phase timing, death context. All of it classified and weighted.
             </p>
           </div>
@@ -116,8 +116,8 @@ export function Home() {
             <div className="home-pillar-number">02</div>
             <h3 className="home-pillar-title">Role-Based Impact Scoring</h3>
             <p className="home-pillar-text">
-              A contextual Impact Score is computed per match, per role. 
-              Duelist scores weight entry effectiveness. Sentinel scores weight 
+              A contextual Impact Score is computed per match, per role.
+              Duelist scores weight entry effectiveness. Sentinel scores weight
               site hold and retake contribution. The role defines the standard.
             </p>
           </div>
@@ -125,9 +125,9 @@ export function Home() {
             <div className="home-pillar-number">03</div>
             <h3 className="home-pillar-title">Contextual Normalization</h3>
             <p className="home-pillar-text">
-              Scores are normalized against match-level baselines. A 20-kill 
-              game on a losing team reads differently than a 20-kill game 
-              carrying. The engine adjusts for round state, role expectations, 
+              Scores are normalized against match-level baselines. A 20-kill
+              game on a losing team reads differently than a 20-kill game
+              carrying. The engine adjusts for round state, role expectations,
               and match context.
             </p>
           </div>
@@ -135,8 +135,8 @@ export function Home() {
             <div className="home-pillar-number">04</div>
             <h3 className="home-pillar-title">Behavioral Pattern Analysis</h3>
             <p className="home-pillar-text">
-              Long-term aggregation surfaces tendencies - aggression bias, 
-              clutch participation rate, consistency versus volatility. 
+              Long-term aggregation surfaces tendencies - aggression bias,
+              clutch participation rate, consistency versus volatility.
               Not just how you performed, but how you tend to perform.
             </p>
           </div>
