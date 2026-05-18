@@ -1,11 +1,10 @@
 import { app } from './app';
-import "dotenv/config";
 import { env } from './config/env';
 import { db } from './db/client';
 
 async function start() {
   try {
-    await db.query('SELECT 1'); // verify DB connection
+    await db.query('SELECT 1');
     console.log('Database connected');
 
     app.listen(env.PORT, () => {
