@@ -1,19 +1,32 @@
-import { useState, useEffect } from "react"
-import { PlayerDTO } from "../../types/PlayerDTO"
-import { fetchPlayer } from "./player-service"
+import { useState, useEffect } from 'react';
+import { PlayerDTO } from '../../types/PlayerDTO';
+import { fetchPlayer } from './player-service';
+import { syncMatches } from '../match/match-service';
 
 export function usePlayer(gameName: string, tagLine: string) {
-    const [player, setPlayer] = useState<PlayerDTO | null>(null)
-    const [loading, setLoading] = useState(false)
-    const [error, setError] = useState<string | null>(null)
+  const [player, setPlayer] = useState<PlayerDTO | null>(null);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState<string | null>(null);
 
-    useEffect(() => {
-        if (!gameName || !tagLine) return
-        setLoading(true)
-        fetchPlayer(gameName, tagLine)
-            .then(setPlayer)
-            .catch((e) => setError(e.message))
-            .finally(() => setLoading(false))
-    }, [gameName, tagLine])
-    return { player, loading, error }
+  useEffect(() => {
+    if (!gameName || !tagLine) return;
+    setLoading(true);
+    setError(null);
+
+    fetchPlayer(gameName, tagLine)
+      .then(async (p) => {
+        setPlayer(p);
+        // Auto-sync matches in background after player loads
+        try {
+          await syncMatches(p.puuid);
+        } catch {
+          // Sync failure is non-fatal — show cached data if available
+          console.warn('Match sync failed, showing cached data');
+        }
+      })
+      .catch((e) => setError(e.message))
+      .finally(() => setLoading(false));
+  }, [gameName, tagLine]);
+
+  return { player, loading, error };
 }

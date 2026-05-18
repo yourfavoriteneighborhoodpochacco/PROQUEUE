@@ -22,7 +22,7 @@ export async function upsertMatch(
   for (const player of players) {
     const score = scores.find((s) => s.puuid === player.puuid);
     await db.query(
-      'INSERT INTO player_match_results (match_id, puuid, team_id, outcome, agent_id, kills, deaths, assists, score, impact_raw, impact_normalized, impact_breakdown) VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12) ON CONFLICT (match_id, puuid) DO NOTHING',
+      'INSERT INTO player_match_results (match_id, puuid, team_id, outcome, agent_id, kills, deaths, assists, score, impact_raw, impact_normalized, impact_breakdown, role) VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13) ON CONFLICT (match_id, puuid) DO NOTHING',
       [
         player.matchId,
         player.puuid,
@@ -36,6 +36,7 @@ export async function upsertMatch(
         score?.raw ?? null,
         score?.normalized ?? null,
         score ? JSON.stringify(score.breakdown) : null,
+        score?.role ?? null,
       ]
     );
   }
@@ -43,7 +44,7 @@ export async function upsertMatch(
 
 export async function getMatchesByPuuid(puuid: string): Promise<any[]> {
   const result = await db.query(
-    'SELECT match_id AS "matchId", puuid, team_id AS "teamId", outcome, agent_id AS "agentId", kills, deaths, assists, score, impact_raw AS "impactRaw", impact_normalized AS "impactNormalized", impact_breakdown AS "impactBreakdown" FROM player_match_results WHERE puuid = $1 ORDER BY match_id DESC',
+    'SELECT match_id AS "matchId", puuid, team_id AS "teamId", outcome, agent_id AS "agentId", kills, deaths, assists, score, impact_raw AS "impactRaw", impact_normalized AS "impactNormalized", impact_breakdown AS "impactBreakdown", role FROM player_match_results WHERE puuid = $1 ORDER BY match_id DESC',
     [puuid]
   );
   return result.rows;

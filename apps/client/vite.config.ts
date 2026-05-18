@@ -9,4 +9,11 @@ export default defineConfig({
       '@proqueue/shared': resolve(__dirname, '../../packages/shared'),
     },
   },
+  server: {
+    proxy: {
+      '/players': 'http://localhost:3000',
+      '/matches': 'http://localhost:3000',
+      '/health': 'http://localhost:3000',
+    },
+  },
 });

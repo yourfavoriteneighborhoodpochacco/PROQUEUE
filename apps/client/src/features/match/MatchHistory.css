@@ -1,0 +1,132 @@
+.match-history {
+  display: flex;
+  flex-direction: column;
+}
+
+.match-history-header {
+  padding: 1.5rem 2.5rem;
+  border-bottom: 1px solid var(--border);
+  font-family: var(--font-mono);
+  font-size: 0.6rem;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--grey-600);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.match-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.match-row {
+  display: grid;
+  grid-template-columns: 3px 60px 160px 1fr auto auto;
+  align-items: center;
+  gap: 1.5rem;
+  padding: 1.25rem 2.5rem 1.25rem 0;
+  border-bottom: 1px solid var(--border);
+  transition: background 0.15s;
+}
+
+.match-row:hover { background: var(--grey-900); }
+
+.match-outcome-bar {
+  height: 100%;
+  min-height: 48px;
+  width: 3px;
+  flex-shrink: 0;
+}
+
+.match-outcome-bar.win { background: var(--win); }
+.match-outcome-bar.loss { background: var(--loss); }
+
+.match-outcome-label {
+  font-family: var(--font-display);
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+}
+
+.match-outcome-label.win { color: var(--win); }
+.match-outcome-label.loss { color: var(--loss); }
+
+.match-agent {
+  font-family: var(--font-display);
+  font-size: 1rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--white);
+}
+
+.match-kda {
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  display: flex;
+  align-items: center;
+  gap: 0.15rem;
+  color: var(--grey-400);
+}
+
+.match-kda-kills { color: var(--white); }
+.match-kda-deaths { color: var(--grey-400); }
+.match-kda-assists { color: var(--grey-600); }
+.match-kda-sep { color: var(--grey-700); margin: 0 0.1rem; }
+
+.match-kda-ratio {
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  color: var(--grey-600);
+  letter-spacing: 0.05em;
+}
+
+.match-impact {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0.2rem;
+}
+
+.match-impact-label {
+  font-family: var(--font-mono);
+  font-size: 0.55rem;
+  letter-spacing: 0.2em;
+  color: var(--grey-600);
+  text-transform: uppercase;
+}
+
+.match-impact-value {
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  font-weight: 500;
+}
+
+.match-skeleton-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.match-skeleton {
+  height: 64px;
+  border-bottom: 1px solid var(--border);
+  background: linear-gradient(90deg, transparent 0%, var(--grey-900) 50%, transparent 100%);
+  background-size: 200% 100%;
+  animation: shimmer 1.8s infinite;
+}
+
+@keyframes shimmer {
+  from { background-position: 200% 0; }
+  to { background-position: -200% 0; }
+}
+
+.match-empty {
+  padding: 3rem 2.5rem;
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  color: var(--grey-600);
+  letter-spacing: 0.1em;
+}

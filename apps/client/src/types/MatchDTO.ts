@@ -10,7 +10,8 @@ export interface MatchDTO {
   kills: number;
   deaths: number;
   assists: number;
-  role: Role;
+  agentId: string;
+  role?: Role;
   impactRaw: number;
   impactNormalized: number;
   impactBreakdown: Record<string, number>;

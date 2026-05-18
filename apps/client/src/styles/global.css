@@ -1,0 +1,61 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;500;600;700;800&family=Barlow:wght@300;400;500&family=DM+Mono:wght@400;500&display=swap');
+
+:root {
+  --black: #1c1c1c;
+  --white: #ffffff;
+  --off-white: #f0f0f0;
+  --grey-100: #f0f0f0;
+  --grey-200: #d6d6d6;
+  --grey-400: #9a9a9a;
+  --grey-600: #5a5a5a;
+  --grey-700: #3a3a3a;
+  --grey-800: #262626;
+  --grey-900: #1b1b1b;
+  --accent: #9df4fc;
+  --win: #00ff88;
+  --loss: #ff3232;
+  --bg: var(--black);
+  --surface: var(--grey-900);
+  --border: #222222;
+  --border-light: #333333;
+  --font-display: 'Barlow Condensed', sans-serif;
+  --font-body: 'Barlow', sans-serif;
+  --font-mono: 'DM Mono', monospace;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;
+}
+
+body {
+  background: var(--bg);
+  color: var(--white);
+  font-family: var(--font-body);
+  font-weight: 300;
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  background: none;
+  font-family: inherit;
+}
