@@ -1,17 +1,9 @@
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
-import { resolve } from 'path';
+import tsconfigPaths from 'vite-tsconfig-paths';
 
 export default defineConfig({
-  plugins: [react()],
-  resolve: {
-    alias: {
-      '@proqueue/shared': resolve(__dirname, '../../packages/shared'),
-    },
-  },
-  optimizeDeps: {
-    include: ['@proqueue/shared'],
-  },
+  plugins: [react(), tsconfigPaths()],
   server: {
     proxy: {
       '/players': 'http://localhost:3000',
