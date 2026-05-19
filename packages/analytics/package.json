@@ -3,6 +3,28 @@
   "version": "1.0.0",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "require": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    },
+    "./detection/trade-detection": {
+      "require": "./dist/detection/trade-detection.js",
+      "types": "./dist/detection/trade-detection.d.ts"
+    },
+    "./scoring/impact-score": {
+      "require": "./dist/scoring/impact-score.js",
+      "types": "./dist/scoring/impact-score.d.ts"
+    },
+    "./scoring/normalization": {
+      "require": "./dist/scoring/normalization.js",
+      "types": "./dist/scoring/normalization.d.ts"
+    },
+    "./scoring/role-classifier": {
+      "require": "./dist/scoring/role-classifier.js",
+      "types": "./dist/scoring/role-classifier.d.ts"
+    }
+  },
   "scripts": {
     "build": "tsc"
   }

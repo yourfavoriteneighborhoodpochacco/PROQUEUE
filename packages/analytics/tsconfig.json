@@ -8,13 +8,12 @@
     "skipLibCheck": true,
     "declaration": true,
     "outDir": "./dist",
-    "rootDir": "../..",
+    "rootDir": ".",
     "baseUrl": ".",
     "paths": {
-      "@proqueue/shared/*": [
-        "../shared/*"
-      ]
-    }
+      "@proqueue/shared/*": ["../shared/*"]
+    },
+    "composite": true
   },
   "include": [
     "parsing/**/*",
@@ -22,8 +21,8 @@
     "scoring/**/*",
     "profiling/**/*"
   ],
-  "exclude": [
-    "dist",
-    "node_modules"
-  ]
+  "references": [
+    { "path": "../shared" }
+  ],
+  "exclude": ["dist", "node_modules"]
 }
