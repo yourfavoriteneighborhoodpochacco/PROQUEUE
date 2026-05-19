@@ -10,5 +10,11 @@
     "types/**/*",
     "enums/**/*",
     "constants/**/*"
-  ]
+  ],
+  "exclude": [
+  "dist",
+  "**/dist",
+  "**/__tests__",
+  "**/*.test.ts"
+]
 }

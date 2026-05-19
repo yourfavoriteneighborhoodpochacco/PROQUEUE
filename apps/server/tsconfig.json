@@ -1,13 +1,17 @@
 {
   "extends": "../../tsconfig.base.json",
   "compilerOptions": {
-    "module": "CommonJS",
-    "moduleResolution": "bundler",
+    "module": "NodeNext",
+    "moduleResolution": "NodeNext",
     "outDir": "./dist",
     "declarationDir": "./dist",
     "paths": {
-      "@proqueue/shared/*": ["../../packages/shared/*"],
-      "@proqueue/analytics/*": ["../../packages/analytics/*"]
+      "@proqueue/shared/*": [
+        "../../packages/shared/*"
+      ],
+      "@proqueue/analytics/*": [
+        "../../packages/analytics/*"
+      ]
     }
   },
   "include": [
@@ -16,7 +20,17 @@
     "../../packages/analytics/**/*"
   ],
   "references": [
-    { "path": "../../packages/shared" },
-    { "path": "../../packages/analytics" }
-  ]
+    {
+      "path": "../../packages/shared"
+    },
+    {
+      "path": "../../packages/analytics"
+    }
+  ],
+  "exclude": [
+  "dist",
+  "**/dist",
+  "**/__tests__",
+  "**/*.test.ts"
+]
 }

@@ -19,5 +19,11 @@
   ],
   "references": [
     { "path": "../shared" }
-  ]
+  ],
+  "exclude": [
+  "dist",
+  "**/dist",
+  "**/__tests__",
+  "**/*.test.ts"
+]
 }
