@@ -1,5 +1,5 @@
 import { Role } from '@proqueue/shared/enums/role'
-import { IMPACT_WEIGHTS } from '../../shared/constants/scoring-weights'
+import { IMPACT_WEIGHTS } from '@proqueue/shared/constants/scoring-weights'
 import { TradeResult } from '../detection/trade-detection'
 
 export interface ScoringInput {

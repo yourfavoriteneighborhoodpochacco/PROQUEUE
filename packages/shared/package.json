@@ -3,6 +3,24 @@
   "version": "1.0.0",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "require": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    },
+    "./types/*": {
+      "require": "./dist/types/*.js",
+      "types": "./dist/types/*.d.ts"
+    },
+    "./enums/*": {
+      "require": "./dist/enums/*.js",
+      "types": "./dist/enums/*.d.ts"
+    },
+    "./constants/*": {
+      "require": "./dist/constants/*.js",
+      "types": "./dist/constants/*.d.ts"
+    }
+  },
   "scripts": {
     "build": "tsc"
   }
