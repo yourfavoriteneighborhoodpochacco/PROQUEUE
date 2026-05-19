@@ -15,9 +15,7 @@
     }
   },
   "include": [
-    "src/**/*",
-    "../../packages/shared/**/*",
-    "../../packages/analytics/**/*"
+    "src/**/*"
   ],
   "references": [
     {
@@ -28,9 +26,9 @@
     }
   ],
   "exclude": [
-  "dist",
-  "**/dist",
-  "**/__tests__",
-  "**/*.test.ts"
-]
+    "dist",
+    "**/dist",
+    "**/__tests__",
+    "**/*.test.ts"
+  ]
 }
