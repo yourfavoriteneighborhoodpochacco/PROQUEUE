@@ -2,7 +2,7 @@
   "$schema": "https://railway.app/railway.schema.json",
   "build": {
     "builder": "NIXPACKS",
-    "buildCommand": "npm install && npx tsc -p packages/shared/tsconfig.json && npx tsc -p packages/analytics/tsconfig.json && npx tsc -p apps/server/tsconfig.json"
+    "buildCommand": "npm install && npx tsc -p packages/shared/tsconfig.cjs.json && npx tsc -p packages/analytics/tsconfig.json && npx tsc -p apps/server/tsconfig.json"
   },
   "deploy": {
     "startCommand": "node apps/server/dist/apps/server/src/index.js",

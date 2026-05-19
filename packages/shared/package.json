@@ -1,27 +1,32 @@
 {
   "name": "@proqueue/shared",
   "version": "1.0.0",
-  "main": "./dist/index.js",
-  "types": "./dist/index.d.ts",
+  "main": "./dist/cjs/index.js",
+  "module": "./dist/esm/index.js",
+  "types": "./dist/cjs/index.d.ts",
   "exports": {
     ".": {
-      "require": "./dist/index.js",
-      "types": "./dist/index.d.ts"
+      "import": "./dist/esm/index.js",
+      "require": "./dist/cjs/index.js",
+      "types": "./dist/cjs/index.d.ts"
     },
     "./types/*": {
-      "require": "./dist/types/*.js",
-      "types": "./dist/types/*.d.ts"
+      "import": "./dist/esm/types/*.js",
+      "require": "./dist/cjs/types/*.js",
+      "types": "./dist/cjs/types/*.d.ts"
     },
     "./enums/*": {
-      "require": "./dist/enums/*.js",
-      "types": "./dist/enums/*.d.ts"
+      "import": "./dist/esm/enums/*.js",
+      "require": "./dist/cjs/enums/*.js",
+      "types": "./dist/cjs/enums/*.d.ts"
     },
     "./constants/*": {
-      "require": "./dist/constants/*.js",
-      "types": "./dist/constants/*.d.ts"
+      "import": "./dist/esm/constants/*.js",
+      "require": "./dist/cjs/constants/*.js",
+      "types": "./dist/cjs/constants/*.d.ts"
     }
   },
   "scripts": {
-    "build": "tsc"
+    "build": "tsc -p tsconfig.cjs.json && tsc -p tsconfig.esm.json"
   }
 }
