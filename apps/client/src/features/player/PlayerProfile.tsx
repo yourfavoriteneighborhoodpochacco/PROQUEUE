@@ -4,18 +4,26 @@ import { useMatchHistory } from '../match/useMatchHistory';
 import { ImpactCard } from '../impact/ImpactCard';
 import { RoleBreakdown } from '../impact/RoleBreakdown';
 import { MatchHistory } from '../match/MatchHistory';
+import { useEffect } from 'react';
 import './PlayerProfile.css';
 
 export function PlayerProfile() {
   const { gameName, tagLine } = useParams<{ gameName: string; tagLine: string }>();
   const navigate = useNavigate();
 
-  const { player, loading: playerLoading, error: playerError } = usePlayer(
+  const { player, loading: playerLoading, syncing, error: playerError } = usePlayer(
     gameName ?? '',
     tagLine ?? ''
   );
 
-  const { matches, loading: matchLoading } = useMatchHistory(player?.puuid ?? '');
+  const { matches, loading: matchLoading, refetch } = useMatchHistory(player?.puuid ?? '');
+
+  // Refetch matches once sync completes
+  useEffect(() => {
+    if (!syncing && player) {
+      refetch();
+    }
+  }, [syncing]);
 
   if (playerLoading) return (
     <div className="profile-loading">
@@ -44,6 +52,7 @@ export function PlayerProfile() {
           </h1>
           <div className="profile-meta">
             <span className="profile-badge">{player.region}</span>
+            {syncing && <span className="profile-syncing">Syncing latest matches...</span>}
           </div>
         </div>
       </header>

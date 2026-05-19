@@ -123,6 +123,20 @@
   grid-column: 2;
 }
 
+.profile-syncing {
+  font-family: var(--font-mono);
+  font-size: 0.6rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--grey-600);
+  animation: pulse 1.5s ease infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.3; }
+}
+
 @media (max-width: 900px) {
   .profile-header {
     padding: 1.5rem 2rem;

@@ -8,9 +8,14 @@ const henrikClient = axios.create({
 
 henrikClient.interceptors.response.use(
   (res) => res,
-  (err: AxiosError<any>) => {
-    console.log('HENRIK ERROR STATUS:', err.response?.status);
-    console.log('HENRIK ERROR DATA:', JSON.stringify(err.response?.data, null, 2));
+  async (err: AxiosError<any>) => {
+    if (err.response?.status === 429) {
+      const retryAfter = Number(err.response.headers['retry-after'] ?? 60);
+      console.log(`Rate limited by Henrik, waiting ${retryAfter}s`);
+      await new Promise((r) => setTimeout(r, retryAfter * 1000));
+      return henrikClient.request(err.config!);
+    }
+    console.log('HENRIK ERROR:', err.response?.status, JSON.stringify(err.response?.data));
     throw err;
   }
 );
@@ -22,7 +27,6 @@ export async function getAccountByRiotId(
   const { data } = await henrikClient.get(
     `/valorant/v1/account/${encodeURIComponent(gameName)}/${encodeURIComponent(tagLine)}`
   );
-  console.log('HENRIK ACCOUNT RESPONSE:', JSON.stringify(data, null, 2));
   return {
     puuid: data.data.puuid,
     gameName: data.data.name,
@@ -36,7 +40,8 @@ export async function getMatchesByNameTag(
   region: string = 'na'
 ): Promise<any[]> {
   const { data } = await henrikClient.get(
-    `/valorant/v3/matches/${region}/${encodeURIComponent(gameName)}/${encodeURIComponent(tagLine)}`
+    `/valorant/v3/matches/${region}/${encodeURIComponent(gameName)}/${encodeURIComponent(tagLine)}`,
+    { params: { size: 5 } }
   );
   return data.data;
 }
