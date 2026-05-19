@@ -1,0 +1,6 @@
+{
+  "buildCommand": "npm run build --workspace=@proqueue/shared && npm run build --workspace=@proqueue/client",
+  "outputDirectory": "apps/client/dist",
+  "installCommand": "npm install",
+  "framework": "vite"
+}

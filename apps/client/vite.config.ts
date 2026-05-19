@@ -6,7 +6,7 @@ export default defineConfig({
   plugins: [react()],
   resolve: {
     alias: {
-      '@proqueue/shared': resolve(__dirname, '../../packages/shared'),
+      '@proqueue/shared': resolve(__dirname, '../../packages/shared/dist'),
     },
   },
   server: {
