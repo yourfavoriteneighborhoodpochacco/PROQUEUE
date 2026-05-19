@@ -1,8 +1,19 @@
 {
-  "extends": "./tsconfig.json",
   "compilerOptions": {
+    "target": "ES2020",
+    "composite": true,
     "module": "CommonJS",
     "moduleResolution": "node",
+    "strict": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "declaration": true,
     "outDir": "./dist/cjs"
-  }
+  },
+  "include": [
+    "types/**/*",
+    "enums/**/*",
+    "constants/**/*"
+  ],
+  "exclude": ["dist", "node_modules"]
 }
