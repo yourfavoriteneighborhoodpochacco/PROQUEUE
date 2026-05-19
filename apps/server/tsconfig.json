@@ -1,34 +1,23 @@
 {
-  "extends": "../../tsconfig.base.json",
   "compilerOptions": {
-    "module": "NodeNext",
-    "moduleResolution": "NodeNext",
+    "target": "ES2020",
+    "module": "CommonJS",
+    "moduleResolution": "node",
+    "strict": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "declaration": true,
     "outDir": "./dist",
-    "declarationDir": "./dist",
+    "rootDir": "../..",
+    "baseUrl": ".",
     "paths": {
-      "@proqueue/shared/*": [
-        "../../packages/shared/*"
-      ],
-      "@proqueue/analytics/*": [
-        "../../packages/analytics/*"
-      ]
+      "@proqueue/shared/*": ["../../packages/shared/*"],
+      "@proqueue/analytics/*": ["../../packages/analytics/*"]
     }
   },
   "include": [
-    "src/**/*"
-  ],
-  "references": [
-    {
-      "path": "../../packages/shared"
-    },
-    {
-      "path": "../../packages/analytics"
-    }
-  ],
-  "exclude": [
-    "dist",
-    "**/dist",
-    "**/__tests__",
-    "**/*.test.ts"
+    "src/**/*",
+    "../../packages/shared/**/*",
+    "../../packages/analytics/**/*"
   ]
 }

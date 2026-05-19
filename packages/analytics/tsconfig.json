@@ -1,10 +1,14 @@
 {
-  "extends": "../../tsconfig.base.json",
   "compilerOptions": {
+    "target": "ES2020",
     "module": "CommonJS",
     "moduleResolution": "node",
+    "strict": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "declaration": true,
     "outDir": "./dist",
-    "declarationDir": "./dist",
+    "rootDir": "../..",
     "baseUrl": ".",
     "paths": {
       "@proqueue/shared/*": ["../shared/*"]
@@ -14,16 +18,6 @@
     "parsing/**/*",
     "detection/**/*",
     "scoring/**/*",
-    "profiling/**/*",
-    "__tests__/**/*"
-  ],
-  "references": [
-    { "path": "../shared" }
-  ],
-  "exclude": [
-  "dist",
-  "**/dist",
-  "**/__tests__",
-  "**/*.test.ts"
-]
+    "profiling/**/*"
+  ]
 }
