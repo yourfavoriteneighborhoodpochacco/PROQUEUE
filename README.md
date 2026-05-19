@@ -6,7 +6,9 @@ PROQUEUE is a systems-oriented product engineering project focused on player per
 - Role-based Impact Score modeling
 - Trade detection engine
 - Match event decomposition
-- Behavioral trend analysis
+- Behavioral trend analysis  
+
+Note!! This engine supports analytics for the following game modes and meshes them into one category: Deathmatch, Team Deathmatch, Swiftplay, Unrated, Competitive.
 
 ## PROQUEUE's Modern Architecture
 React Frontend  

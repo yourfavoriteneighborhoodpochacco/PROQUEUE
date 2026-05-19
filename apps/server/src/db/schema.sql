@@ -1,31 +1,37 @@
-//players
 CREATE TABLE players (
-    id SERIAL PRIMARY KEY
+    id SERIAL PRIMARY KEY,
     puuid TEXT UNIQUE NOT NULL,
     game_name TEXT NOT NULL,
-    tag_line TEXT NOT NULL
+    tag_line TEXT NOT NULL,
+    region TEXT,
+    created_at TIMESTAMP DEFAULT NOW(),
+    updated_at TIMESTAMP DEFAULT NOW()
 );
 
-//matches
 CREATE TABLE matches (
     id SERIAL PRIMARY KEY,
     match_id TEXT UNIQUE NOT NULL,
-    map_name TEXT,
+    map_id TEXT,
     game_mode TEXT,
-    started_at TIMESTAMP
+    game_length_ms BIGINT,
+    game_start_ms BIGINT,
+    region TEXT
 );
 
-//player_matches
-CREATE TABLE player_matches (
+CREATE TABLE player_match_results (
     id SERIAL PRIMARY KEY,
-    player_id INTEGER REFERENCES players(id),
-    match_id INTEGER REFERENCES matches(id),
-
-    role TEXT,
-    
+    match_id TEXT REFERENCES matches(match_id),
+    puuid TEXT REFERENCES players(puuid),
+    team_id TEXT,
+    outcome TEXT,
+    agent_id TEXT,
     kills INTEGER,
     deaths INTEGER,
     assists INTEGER,
-
-    impact_score FLOAT
+    score INTEGER,
+    impact_raw FLOAT,
+    impact_normalized FLOAT,
+    impact_breakdown JSONB,
+    role TEXT,
+    UNIQUE(match_id, puuid)
 );
