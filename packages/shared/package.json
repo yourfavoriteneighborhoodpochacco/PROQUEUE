@@ -5,10 +5,5 @@
   "types": "./dist/index.d.ts",
   "scripts": {
     "build": "tsc"
-  },
-  "exports": {
-    "./types/*": "./types/*.ts",
-    "./enums/*": "./enums/*.ts",
-    "./constants/*": "./constants/*.ts"
   }
 }

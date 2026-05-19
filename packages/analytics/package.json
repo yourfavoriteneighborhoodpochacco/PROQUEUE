@@ -5,26 +5,5 @@
   "types": "./dist/index.d.ts",
   "scripts": {
     "build": "tsc"
-  },
-  "exports": {
-    "./parsing/*": {
-      "require": "./dist/parsing/*.js",
-      "types": "./dist/parsing/*.d.ts"
-    },
-    "./detection/*": {
-      "require": "./dist/detection/*.js",
-      "types": "./dist/detection/*.d.ts"
-    },
-    "./scoring/*": {
-      "require": "./dist/scoring/*.js",
-      "types": "./dist/scoring/*.d.ts"
-    },
-    "./profiling/*": {
-      "require": "./dist/profiling/*.js",
-      "types": "./dist/profiling/*.d.ts"
-    }
-  },
-  "dependencies": {
-    "@proqueue/shared": "*"
   }
 }
