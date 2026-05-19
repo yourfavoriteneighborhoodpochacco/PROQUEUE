@@ -6,8 +6,11 @@ export default defineConfig({
   plugins: [react()],
   resolve: {
     alias: {
-      '@proqueue/shared': resolve(__dirname, '../../packages/shared/dist'),
+      '@proqueue/shared': resolve(__dirname, '../../packages/shared'),
     },
+  },
+  optimizeDeps: {
+    include: ['@proqueue/shared'],
   },
   server: {
     proxy: {
