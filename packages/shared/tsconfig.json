@@ -13,5 +13,9 @@
     "types/**/*",
     "enums/**/*",
     "constants/**/*"
+  ],
+  "exclude": [
+    "dist",
+    "node_modules"
   ]
 }
