@@ -8,7 +8,7 @@
   "scripts": {
     "dev:server": "npm run dev --workspace=apps/server",
     "dev:client": "npm run dev --workspace=apps/client",
-    "build": "npm run build --workspaces",
+    "build": "npm run build -w @proqueue/shared && npm run build -w @proqueue/analytics && npm run build -w @proqueue/server",
     "test": "npm run test --workspaces"
   },
   "dependencies": {

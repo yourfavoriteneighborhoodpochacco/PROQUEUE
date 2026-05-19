@@ -1,4 +1,4 @@
-import axios, { AxiosError } from 'axios';
+import axios, { type AxiosError } from 'axios';
 import { env } from '../config/env';
 
 const henrikClient = axios.create({
