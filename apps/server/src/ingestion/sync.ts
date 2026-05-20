@@ -6,6 +6,8 @@ import { classifyRole } from '@proqueue/analytics/scoring/role-classifier';
 import { upsertMatch } from '../db/queries/matches';
 import { getPlayerByPuuid } from '../db/queries/players';
 import { parseHenrikMatch } from '../parsers/henrik-parser';
+import { upsertEvents } from '../db/queries/events';
+
 
 async function withRetry<T>(fn: () => Promise<T>, retries = 3, delayMs = 2000): Promise<T> {
   for (let i = 0; i < retries; i++) {
@@ -52,5 +54,6 @@ export async function syncPlayerMatches(puuid: string): Promise<void> {
 
     const normalized = normalizeScores(scores, { matchScores: scores });
     await upsertMatch(parsed.match, parsed.players, normalized);
+    await upsertEvents(parsed.events);
   }
 }
