@@ -8,6 +8,8 @@ const AGENT_ROLE_MAP: Record<string, Role> = {
   'Neon': Role.Duelist,
   'Iso': Role.Duelist,
   'Waylay': Role.Duelist,
+  'Yoru': Role.Duelist,
+  'Raze': Role.Duelist,
 
   // Initiators
   'Sova': Role.Initiator,
@@ -16,6 +18,7 @@ const AGENT_ROLE_MAP: Record<string, Role> = {
   'KAY/O': Role.Initiator,
   'Fade': Role.Initiator,
   'Gekko': Role.Initiator,
+  'Tejo': Role.Initiator,
 
   // Controllers
   'Brimstone': Role.Controller,
@@ -24,6 +27,7 @@ const AGENT_ROLE_MAP: Record<string, Role> = {
   'Astra': Role.Controller,
   'Harbor': Role.Controller,
   'Clove': Role.Controller,
+  'Miks': Role.Controller,
 
   // Sentinels
   'Killjoy': Role.Sentinel,
@@ -32,6 +36,7 @@ const AGENT_ROLE_MAP: Record<string, Role> = {
   'Chamber': Role.Sentinel,
   'Deadlock': Role.Sentinel,
   'Vyse': Role.Sentinel,
+  'Veto': Role.Sentinel,
 };
 
 export function classifyRole(agentName: string): Role {
